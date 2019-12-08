@@ -1,0 +1,4 @@
+node_module
+/dist
+/release
+/tools/DistributionTool
