@@ -1,0 +1,38 @@
+{
+  "Actions": [
+    {
+      "Icon": "action/images/actionimage", 
+      "Name": "Command", 
+      "States": [
+        {
+          "Image": "action/images/action"
+        }
+      ], 
+      "Tooltip": "Sends command to Phantombot", 
+      "UUID": "de.everald.phantombot.action"
+    }
+  ], 
+  "SDKVersion": 2,
+  "Author": "Everald Johnson", 
+  "CodePath": "index.html", 
+  "PropertyInspectorPath": "propertyinspector/index.html", 
+  "Description": "This plugin authenticates against the websocket API of the phantombot panel and will offer u the option to send commands to it on key press. ", 
+  "Name": "Phantombot", 
+  "Icon": "action/images/action", 
+  "URL": "https://www.elgato.com/en/gaming/stream-deck", 
+  "Version": "0.1.0",
+  "OS": [
+    {
+        "Platform": "mac", 
+        "MinimumVersion" : "10.11"
+    },
+    {
+        "Platform": "windows", 
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "4.1"
+  }
+}

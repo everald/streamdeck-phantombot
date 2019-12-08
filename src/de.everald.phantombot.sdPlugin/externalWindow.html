@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>de.everald.phantombot.externalWindow</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="propertyinspector/css/sdpi.css" />
+    <style>
+      body {
+        background-color: transparent;
+      }
+
+      .sdpi-item {
+        max-width: none !important;
+      }
+
+      .sdpi-heading {
+        margin: 16px 0;
+      }
+
+      ul {
+        max-height: none;
+      }
+      li * {
+        min-height: 18px;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+      }
+
+      .wrap {
+        margin: 8px;
+      }
+      .title {
+        font-weight: bold;
+        padding-bottom: 2px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: uppercase;
+      }
+
+      .wrap {
+        text-align: center;
+      }
+
+      .g {
+        position: absolute;
+        z-index: -10;
+        top: auto;
+        height: 80px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: red;
+        background: url(propertyinspector/css/g_d8d8d8.svg) no-repeat center;
+        background-size: 10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="g"></div>
+
+    <div class="sdpi-wrapper">
+      <div class="sdpi-heading">INFORMATION</div>
+      <div class="wrap">
+        <p>
+          Server url and Authentication Token from the botlogin.txt needed.
+          Please provide.
+        </p>
+      </div>
+
+      <div class="sdpi-heading">Configuration</div>
+      <div id="inputs">
+        <div class="sdpi-item">
+          <div class="sdpi-item-label">Server URL</div>
+          <input
+            class="sdpi-item-value"
+            type="text"
+            id="ephserverurl"
+            value=""
+            placeholder="Panel websocket url. eg.: ws://127.0.0.1:25004"
+          />
+        </div>
+        <div class="sdpi-item">
+          <div class="sdpi-item-label">Authentication Token</div>
+          <input
+            class="sdpi-item-value"
+            type="text"
+            id="ephauthtoken"
+            value=""
+          />
+        </div>
+        <div class="sdpi-item">
+          <button
+            id="save"
+            class="sdpi-item-value"
+            type="button"
+            value="Save"
+            onclick="sendmessage()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener(
+        "message",
+        function(ev) {
+          console.log(
+            "External window received message:  ",
+            ev.data,
+            typeof ev.data
+          );
+          doSomething(ev.data);
+        },
+        false
+      );
+
+      function sendmessage() {
+        parameters = {
+          serverUrl: document.getElementById("ephserverurl").value,
+          authToken: document.getElementById("ephauthtoken").value
+        };
+
+        window.opener.gotCallbackFromWindow(parameters);
+      }
+    </script>
+  </body>
+</html>

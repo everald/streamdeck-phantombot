@@ -1,0 +1,32 @@
+{
+  "name": "streamdeck-plugin-node",
+  "version": "1.0.0",
+  "description": "template for node usage for streamdeck plugins",
+  "main": "dist/websocket.js",
+  "scripts": {
+    "build": "run-s assemble:*",
+    "assemble:typescript": "npx webpack --mode=production",
+    "assemble:copyscripts": "copyfiles -u 1 \"dist/bundle.js\" \"release/de.everald.phantombot.sdPlugin\"",
+    "assemble:plugin": "copyfiles -u 1 \"src/de.everald.phantombot.sdPlugin/*.*\" \"src/de.everald.phantombot.sdPlugin/action/images/*.png\" \"src/de.everald.phantombot.sdPlugin/propertyinspector/index.html\" \"src/de.everald.phantombot.sdPlugin/propertyinspector/css/*.*\" \"src/de.everald.phantombot.sdPlugin/propertyinspector/js/*.js\" release",
+    "assemble:removeOldPluginPackage": "rm de.everald.phantombot.streamDeckPlugin",
+    "assemble:pluginPackage": "./tools/DistributionTool -b -i release/de.everald.phantombot.sdPlugin -o . & exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Everald Johnson",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "copyfiles": "^2.1.1",
+    "npm-run-all": "^4.1.5",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "queueing-subject": "^0.3.4",
+    "rxjs": "^6.5.3",
+    "rxjs-websockets": "^8.0.0"
+  }
+}

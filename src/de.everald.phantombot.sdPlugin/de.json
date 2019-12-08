@@ -1,0 +1,16 @@
+{
+  "Description": "Ermöglicht das Senden von Befehlen über die Panel Websocket API an Phantombot.", 
+  "Name": "Phantombot", 
+  "Category": "Bot", 
+  "de.everald.phantombot.action": {
+    "Name": "Befehl", 
+    "Tooltip": "Sende einen Befehl an Phantombot"
+  },
+  "Localization": {
+    "More info": "Mehr Infos",
+    "Message": "Nachricht",
+    "Click Me": "Klicke mich",
+    "Button": "Taste"
+
+  }
+}

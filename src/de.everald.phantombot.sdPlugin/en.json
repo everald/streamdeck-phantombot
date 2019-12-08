@@ -1,0 +1,15 @@
+{
+  "Description": "Sends commands through the panel websocket API to Phantombot", 
+  "Name": "Phantombot", 
+  "Category": "Bot", 
+  "de.everald.phantombot.action": {
+    "Name": "Command", 
+    "Tooltip": "Sends command to Phantombot"
+  },
+  "Localization": {
+    "More info": "More info",
+    "Message": "Message",
+    "Click Me": "Click Me",
+    "Button": "Button"
+  }
+}
